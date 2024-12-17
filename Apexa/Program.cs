@@ -1,5 +1,6 @@
 
 using Apexa.DAL;
+using Apexa.Filters;
 using Apexa.IDAL;
 using Apexa.IService;
 using Apexa.IService.Helper;
@@ -25,6 +26,10 @@ namespace Apexa
             builder.Services.AddScoped<IAdvisorService, AdvisorService>();
             builder.Services.AddScoped<IValidator, AdvisorValidator>();
             builder.Services.AddSingleton<IUtil,Util>();
+            builder.Services.AddMvc(options =>
+            {
+                options.Filters.Add(typeof(ErrorHandlingFilterAttribute));
+            });
 
             var app = builder.Build();
 
