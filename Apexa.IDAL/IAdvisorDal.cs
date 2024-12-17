@@ -8,15 +8,10 @@ using Apexa.Data.Parameters;
 
 namespace Apexa.IDAL
 {
-    public interface IAdvisorDal: IBaseDal
+    public interface IAdvisorDal: IBaseDal<Advisor>
     {
-        public Advisor? Get(long id);
-
-        public long Add(Advisor entity);
-
-        //public bool Update(BaseDto entity);
-        //public bool Delete(long id);
         public IEnumerable<Advisor> GetAdvisors();
+        public bool CheckSinUnique(string sin, long? advisorId);
 
     }
 }

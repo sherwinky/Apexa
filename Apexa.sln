@@ -11,9 +11,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apexa.IDAL", "Apexa.IDAL\Ap
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apexa.DAL", "Apexa.DAL\Apexa.DAL.csproj", "{87DC75A1-FB62-4063-BBEE-813D9062DB0F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apexa.IAdvisorService", "Apexa.IAdvisorService\Apexa.IAdvisorService.csproj", "{24E96D89-4FDD-4DA5-BA7D-68440BE07E0E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apexa.IService", "Apexa.IService\Apexa.IService.csproj", "{24E96D89-4FDD-4DA5-BA7D-68440BE07E0E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apexa.AdvisorService", "Apexa.AdvisorService\Apexa.AdvisorService.csproj", "{EA7B8FC8-64FB-47C5-A79F-E05E59D50728}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apexa.Service", "Apexa.Service\Apexa.Service.csproj", "{EA7B8FC8-64FB-47C5-A79F-E05E59D50728}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

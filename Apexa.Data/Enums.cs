@@ -13,4 +13,10 @@ namespace Apexa.Data
         Red = 2
 
     }
+
+    public enum ErrorType
+    {
+        ValidationError = 0
+
+    }
 }

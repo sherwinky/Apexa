@@ -8,32 +8,38 @@ using Apexa.IDAL;
 
 namespace Apexa.DAL
 {
-    public class AdvisorDal: BaseDal,IAdvisorDal
+    public class AdvisorDal : BaseDal<Advisor>, IAdvisorDal
     {
-        private readonly AdvisorContext _advisorContext;
-        public AdvisorDal(AdvisorContext dbContext)
+        public AdvisorDal(AdvisorContext dbContext):base(dbContext) 
         {
-            _advisorContext = dbContext;
         }
 
-        public Advisor? Get(long id)
+        public bool CheckSinUnique(string sin, long? advisorId)
         {
-            return _advisorContext.Advisors.FirstOrDefault(item => item.Id == id);
+            if (advisorId.HasValue)
+            {
+                return Entities.Any(item => item.Sin == sin && item.Id != advisorId);
+            }
+            else
+            {
+                return Entities.Any(item => item.Sin == sin);
+            }
         }
 
-        public long Add(Advisor entity)
-        {
-            var id =  _advisorContext.Advisors.Add(entity).Entity.Id!.Value;
-            _advisorContext.SaveChanges();
-            return id;
-        }
-
-        //public bool Update(BaseDto entity);
         //public bool Delete(long id);
         public IEnumerable<Advisor> GetAdvisors()
         {
-            var result = _advisorContext.Advisors.ToList();
+            var result = Entities.ToList();
             return result;
+        }
+
+        protected override void UpdateEntity(Advisor source, Advisor target)
+        {
+            target.PhoneNumber = source.PhoneNumber;
+            target.Sin = source.Sin;
+            target.Status = source.Status;
+            target.Address = source.Address;
+            target.FullName = source.FullName;
         }
     }
 }

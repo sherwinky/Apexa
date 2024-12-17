@@ -1,6 +1,10 @@
 
 using Apexa.DAL;
 using Apexa.IDAL;
+using Apexa.IService;
+using Apexa.IService.Helper;
+using Apexa.Service;
+using Apexa.Service.Helper;
 
 namespace Apexa
 {
@@ -18,6 +22,9 @@ namespace Apexa
             builder.Services.AddSwaggerGen();
             builder.Services.AddDbContext<AdvisorContext>();
             builder.Services.AddScoped<IAdvisorDal, AdvisorDal>();
+            builder.Services.AddScoped<IAdvisorService, AdvisorService>();
+            builder.Services.AddScoped<IValidator, AdvisorValidator>();
+            builder.Services.AddSingleton<IUtil,Util>();
 
             var app = builder.Build();
 
