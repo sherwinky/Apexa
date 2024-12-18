@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Apexa.IDAL;
+using Apexa.Data.Parameters;
 
 namespace Apexa.DAL
 {
@@ -26,10 +27,20 @@ namespace Apexa.DAL
             }
         }
 
-        public IEnumerable<Advisor> GetAdvisors()
+        public IEnumerable<Advisor> GetAdvisors(QueryParameter? parameter)
         {
-            var result = Entities.ToList();
-            return result;
+            if (parameter != null && !String.IsNullOrEmpty(parameter.Name))
+            {
+                var result = Entities.Where(advisor => advisor.FullName.Contains(parameter.Name)).ToList();
+                return result;
+            }
+            else
+            {
+                var result = Entities.ToList();
+                return result;
+            }
+
+            
         }
 
         protected override void UpdateEntity(Advisor source, Advisor target)

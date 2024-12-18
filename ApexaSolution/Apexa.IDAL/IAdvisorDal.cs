@@ -17,7 +17,7 @@ namespace Apexa.IDAL
         /// Get advisor list
         /// </summary>
         /// <returns>list of advisor</returns>
-        public IEnumerable<Advisor> GetAdvisors();
+        public IEnumerable<Advisor> GetAdvisors(QueryParameter? parameter);
         /// <summary>
         /// check sin is unique
         /// </summary>

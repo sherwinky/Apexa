@@ -1,6 +1,6 @@
 @Apexa_HostAddress = http://localhost:5030
 
-GET {{Apexa_HostAddress}}/weatherforecast/
+GET {{Apexa_HostAddress}}/Apexa/
 Accept: application/json
 
 ###

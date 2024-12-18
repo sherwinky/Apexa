@@ -22,7 +22,7 @@ namespace Apexa
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             builder.Services.AddDbContext<AdvisorContext>();
-            builder.Services.AddScoped<IAdvisorDal, AdvisorDal>();
+            builder.Services.AddScoped<IAdvisorDal,AdvisorDal>();
             builder.Services.AddScoped<IAdvisorService, AdvisorService>();
             builder.Services.AddScoped<IValidator, AdvisorValidator>();
             builder.Services.AddSingleton<IUtil,Util>();

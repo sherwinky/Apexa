@@ -1,5 +1,6 @@
 ﻿using Apexa.Data;
 using Apexa.Data.Dto;
+using Apexa.Data.Parameters;
 using Apexa.IDAL;
 using Apexa.IService;
 using Apexa.IService.Helper;
@@ -25,7 +26,13 @@ namespace Apexa.Controllers
         [HttpGet]
         public ApexaResult Get(string? name)
         {
-            return _advisorService.GetAdvisorList();
+            QueryParameter parameter = new QueryParameter();
+            if (!String.IsNullOrEmpty(name))
+            {
+                parameter.Name = name;
+            }
+
+            return _advisorService.GetAdvisorList(parameter);
         }
 
         // GET api/<AdvisorController>/5

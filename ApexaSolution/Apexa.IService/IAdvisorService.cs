@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Apexa.Data;
+using Apexa.Data.Parameters;
 
 namespace Apexa.IService
 {
@@ -23,7 +24,7 @@ namespace Apexa.IService
         /// get advisor list
         /// </summary>
         /// <returns></returns>
-        public ApexaResult GetAdvisorList();
+        public ApexaResult GetAdvisorList(QueryParameter? parameter);
         /// <summary>
         /// add new advisor
         /// </summary>

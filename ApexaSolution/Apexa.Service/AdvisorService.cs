@@ -9,6 +9,7 @@ using Apexa.Data.Dto;
 using Apexa.IDAL;
 using Apexa.IService;
 using Apexa.Data;
+using Apexa.Data.Parameters;
 using Apexa.IService.Helper;
 using Apexa.Service.Helper;
 
@@ -33,9 +34,9 @@ namespace Apexa.Service
             MaskAdvisor(advisor);
             return new ApexaResult(advisor);
         }
-        public ApexaResult GetAdvisorList()
+        public ApexaResult GetAdvisorList(QueryParameter? parameter)
         {
-            var advisorList = _advisorDal.GetAdvisors();
+            var advisorList = _advisorDal.GetAdvisors(parameter);
             foreach (var advisor in advisorList)
             {
                 MaskAdvisor(advisor);
