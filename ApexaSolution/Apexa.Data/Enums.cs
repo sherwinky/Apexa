@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Apexa.Data
 {
+    /// <summary>
+    /// Health status
+    /// </summary>
     public enum HealthStatus
     {
         Green = 0,
@@ -14,6 +17,9 @@ namespace Apexa.Data
 
     }
 
+    /// <summary>
+    /// Error Type
+    /// </summary>
     public enum ErrorType
     {
         ValidationError = 0

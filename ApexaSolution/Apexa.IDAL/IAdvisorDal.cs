@@ -8,9 +8,22 @@ using Apexa.Data.Parameters;
 
 namespace Apexa.IDAL
 {
+    /// <summary>
+    /// advisor dal interface
+    /// </summary>
     public interface IAdvisorDal: IBaseDal<Advisor>
     {
+        /// <summary>
+        /// Get advisor list
+        /// </summary>
+        /// <returns>list of advisor</returns>
         public IEnumerable<Advisor> GetAdvisors();
+        /// <summary>
+        /// check sin is unique
+        /// </summary>
+        /// <param name="sin"></param>
+        /// <param name="advisorId"></param>
+        /// <returns></returns>
         public bool CheckSinUnique(string sin, long? advisorId);
 
     }

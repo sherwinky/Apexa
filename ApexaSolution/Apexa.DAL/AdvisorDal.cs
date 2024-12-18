@@ -26,7 +26,6 @@ namespace Apexa.DAL
             }
         }
 
-        //public bool Delete(long id);
         public IEnumerable<Advisor> GetAdvisors()
         {
             var result = Entities.ToList();

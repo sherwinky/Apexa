@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Apexa.Data.Parameters
 {
+    /// <summary>
+    /// search parameter class for the feature use
+    /// </summary>
     public class QueryParameter
     {
         public long? Id { get; set; }

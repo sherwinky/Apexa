@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apexa.IService", "Apexa.ISe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apexa.Service", "Apexa.Service\Apexa.Service.csproj", "{EA7B8FC8-64FB-47C5-A79F-E05E59D50728}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "UnitTest\UnitTest.csproj", "{76B90E47-8A28-45D7-A195-AA1243DB2630}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{EA7B8FC8-64FB-47C5-A79F-E05E59D50728}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA7B8FC8-64FB-47C5-A79F-E05E59D50728}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA7B8FC8-64FB-47C5-A79F-E05E59D50728}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76B90E47-8A28-45D7-A195-AA1243DB2630}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76B90E47-8A28-45D7-A195-AA1243DB2630}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76B90E47-8A28-45D7-A195-AA1243DB2630}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76B90E47-8A28-45D7-A195-AA1243DB2630}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

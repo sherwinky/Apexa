@@ -23,7 +23,7 @@ namespace Apexa.Controllers
         
         // GET: api/<AdvisorController>
         [HttpGet]
-        public ApexaResult Get()
+        public ApexaResult Get(string? name)
         {
             return _advisorService.GetAdvisorList();
         }
@@ -39,13 +39,6 @@ namespace Apexa.Controllers
         [HttpPost]
         public ApexaResult Post([FromBody] Advisor advisor)
         {
-            advisor = new Advisor();
-            advisor.Address = "123";
-            advisor.FullName = "test 123";
-            advisor.PhoneNumber = "1122334455";
-            advisor.Status = HealthStatus.Green;
-            advisor.Sin = "123456789";
-
             return _advisorService.AddAdvisor(advisor);
         }
 
@@ -61,6 +54,17 @@ namespace Apexa.Controllers
         public ApexaResult Delete(int id)
         {
             return _advisorService.DeleteAdvisor(id);
+        }
+
+        private Advisor CreateDefaultAdvisor()
+        {
+            Advisor advisor = new Advisor();
+            advisor.Address = "123";
+            advisor.FullName = "test 123";
+            advisor.PhoneNumber = "1122334455";
+            advisor.Status = HealthStatus.Green;
+            advisor.Sin = "123456789";
+            return advisor;
         }
     }
 }

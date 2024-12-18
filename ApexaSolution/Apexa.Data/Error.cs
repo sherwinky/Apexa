@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Apexa.Data
 {
+    /// <summary>
+    /// Error class
+    /// </summary>
     public class Error
     {
         public Error() { }

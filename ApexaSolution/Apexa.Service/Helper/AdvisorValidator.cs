@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Apexa.Data;
 using Apexa.Data.Dto;
@@ -39,6 +40,7 @@ namespace Apexa.Service.Helper
                         {
                             AddValidationError(results,MessageDefination.SinShouldBeUnique);
                         }
+
                     }
                 }
             }
@@ -49,13 +51,13 @@ namespace Apexa.Service.Helper
         public bool IsExist(long id, out IList<ValidationResult>? results)
         {
             results = new List<ValidationResult>();
-
-            if (_advisorDal.Get(id) == null)
+            Advisor advisor = _advisorDal.Get(id);
+            if (advisor == null)
             {
                 AddValidationError(results, MessageDefination.CanNotFindAdvisor);
             }
 
-            return results.Count == 0;
+            return advisor != null;
         }
 
         private void AddValidationError(IList<ValidationResult> results, string message)

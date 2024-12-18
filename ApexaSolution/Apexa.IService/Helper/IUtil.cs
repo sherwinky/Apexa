@@ -7,8 +7,15 @@ using Apexa.Data;
 
 namespace Apexa.IService.Helper
 {
+    /// <summary>
+    /// Helper class
+    /// </summary>
     public interface IUtil
     {
+        /// <summary>
+        /// get next available health status 
+        /// </summary>
+        /// <returns></returns>
         public HealthStatus NexHealthStatus();
     }
 }

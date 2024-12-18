@@ -27,6 +27,8 @@ namespace Apexa.DAL
 
         public long Add(TEntity entity)
         {
+            //add modification time
+            entity.LastUpdatedDateTime = DateTime.Now;
             var id = Entities.Add(entity).Entity.Id!.Value;
             AdvisorContext.SaveChanges();
             return id;
@@ -45,7 +47,7 @@ namespace Apexa.DAL
 
         public void Delete(long id)
         {
-            var adVisor = Entities.First(c => c.Id == 1);
+            var adVisor = Entities.First(c => c.Id == id);
             Entities.Remove(adVisor);
             this.AdvisorContext.SaveChanges();
         }

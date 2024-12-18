@@ -8,6 +8,9 @@ using System.Runtime.CompilerServices;
 
 namespace Apexa.Data.Dto
 {
+    /// <summary>
+    /// advisor dto
+    /// </summary>
     public class Advisor : BaseDto
     {
         [Required(ErrorMessage = "Full name is a required failed"), MaxLength(255, ErrorMessage = "The maximum length of full name is {1}")]

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Apexa.Data
 {
+    /// <summary>
+    /// Text message used across site
+    /// </summary>
     public class MessageDefination
     {
         public static readonly string AdvisorIsNull = "Advisor cannot be null.";

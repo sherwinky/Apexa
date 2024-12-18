@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Apexa.Data.Dto
 {
+    /// <summary>
+    /// Base Dto, the parent class of all dto class
+    /// </summary>
     public class BaseDto
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

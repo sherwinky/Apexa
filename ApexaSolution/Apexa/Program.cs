@@ -26,12 +26,21 @@ namespace Apexa
             builder.Services.AddScoped<IAdvisorService, AdvisorService>();
             builder.Services.AddScoped<IValidator, AdvisorValidator>();
             builder.Services.AddSingleton<IUtil,Util>();
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy(name: "MyAllowOrigins",
+                    policy =>
+                    {
+                        policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+                    });
+            });
+
             builder.Services.AddMvc(options =>
             {
                 options.Filters.Add(typeof(ErrorHandlingFilterAttribute));
             });
-
             var app = builder.Build();
+            app.UseCors("MyAllowOrigins");
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())

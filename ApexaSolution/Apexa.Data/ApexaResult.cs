@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Apexa.Data
 {
+    /// <summary>
+    /// return result used in site level
+    /// </summary>
     public class ApexaResult
     {
         private readonly bool _success;
