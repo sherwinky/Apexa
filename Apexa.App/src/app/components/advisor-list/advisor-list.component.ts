@@ -19,7 +19,7 @@ export class AdvisorListComponent  implements OnInit  {
   advisorName: string;
   colorDic:any= {};
 
-  displayedColumns: string[] = ['FullName',"Sin","Address","PhoneNumber","Status"];
+  displayedColumns: string[] = ['FullName',"Sin","Address","PhoneNumber","Status","Action"];
     constructor(private advisorService: AdvisorService) {
         this.advisorName = '';
         this.colorDic[0] = "green";
@@ -46,6 +46,13 @@ export class AdvisorListComponent  implements OnInit  {
   }
   searchButtonClicked(event:any){
     this.getData();
+  }
+  deleteClick(event:any,id:number){
+    if(confirm("Please confirm delete the record.")){
+      this.advisorService.deleteAdvisor(id).subscribe((data:any)=>{
+        this.getData();
+      });
+    }
   }
   handleErrorResponse(data: ListSearchResult){
     if(!data.success){

@@ -47,6 +47,7 @@ namespace Apexa.Service
         {
             if (_validator.IsValidate(advisor, out IList<ValidationResult>  validationResults, true))
             {
+                advisor.Id = null;//set id to null to enable auto id generation
                 advisor.Status = _utilService.NexHealthStatus();
                 return new ApexaResult(_advisorDal.Add(advisor));
             }

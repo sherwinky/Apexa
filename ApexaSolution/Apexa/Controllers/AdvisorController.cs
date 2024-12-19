@@ -56,22 +56,12 @@ namespace Apexa.Controllers
            return _advisorService.UpdateAdvisor(id,advisor);
         }
 
+
         // DELETE api/<AdvisorController>/5
         [HttpDelete("{id}")]
         public ApexaResult Delete(int id)
         {
             return _advisorService.DeleteAdvisor(id);
-        }
-
-        private Advisor CreateDefaultAdvisor()
-        {
-            Advisor advisor = new Advisor();
-            advisor.Address = "123";
-            advisor.FullName = "test 123";
-            advisor.PhoneNumber = "1122334455";
-            advisor.Status = HealthStatus.Green;
-            advisor.Sin = "123456789";
-            return advisor;
         }
     }
 }
