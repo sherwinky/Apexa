@@ -11,11 +11,11 @@ namespace Apexa.DAL
 {
     public class AdvisorContext: DbContext
     {
-
+        private readonly string DbName = "AdvisorDb";
         protected override void OnConfiguring
             (DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseInMemoryDatabase(databaseName: "AdvisorDb");
+            optionsBuilder.UseInMemoryDatabase(databaseName: DbName);
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
