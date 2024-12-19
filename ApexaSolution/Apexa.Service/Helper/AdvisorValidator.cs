@@ -13,6 +13,9 @@ using Apexa.IService.Helper;
 
 namespace Apexa.Service.Helper
 {
+    /// <summary>
+    /// Validator for advisor
+    /// </summary>
     public class AdvisorValidator : IValidator
     {
         private readonly IAdvisorDal _advisorDal;
@@ -20,7 +23,14 @@ namespace Apexa.Service.Helper
         {
             _advisorDal = advisorDal;
         }
-
+        
+        /// <summary>
+        /// Validate function
+        /// </summary>
+        /// <param name="advisor"></param>
+        /// <param name="results"></param>
+        /// <param name="checkSin"></param>
+        /// <returns></returns>
         public bool IsValidate(Advisor? advisor, out IList<ValidationResult>? results, bool checkSin = false)
         {
             results = new List<ValidationResult>();
@@ -48,6 +58,12 @@ namespace Apexa.Service.Helper
             return results.Count == 0;
         }
 
+        /// <summary>
+        /// Check the existing for the advisor
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="results"></param>
+        /// <returns></returns>
         public bool IsExist(long id, out IList<ValidationResult>? results)
         {
             results = new List<ValidationResult>();

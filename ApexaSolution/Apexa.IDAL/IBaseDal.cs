@@ -8,7 +8,7 @@ using Apexa.Data.Dto;
 namespace Apexa.IDAL
 {
     /// <summary>
-    /// inter face for base data, responsible for basic CURD
+    /// interface of base dal, responsible for basic CURD
     /// </summary>
     /// <typeparam name="TEntity"></typeparam>
     public interface IBaseDal<TEntity> where TEntity : BaseDto

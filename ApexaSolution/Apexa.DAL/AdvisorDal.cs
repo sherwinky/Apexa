@@ -15,6 +15,12 @@ namespace Apexa.DAL
         {
         }
 
+        /// <summary>
+        /// Check the sin is unique
+        /// </summary>
+        /// <param name="sin"></param>
+        /// <param name="advisorId"></param>
+        /// <returns></returns>
         public bool CheckSinUnique(string sin, long? advisorId)
         {
             if (advisorId.HasValue)
@@ -27,6 +33,11 @@ namespace Apexa.DAL
             }
         }
 
+        /// <summary>
+        /// search advisors
+        /// </summary>
+        /// <param name="parameter"></param>
+        /// <returns></returns>
         public IEnumerable<Advisor> GetAdvisors(QueryParameter? parameter)
         {
             if (parameter != null && !String.IsNullOrEmpty(parameter.Name))

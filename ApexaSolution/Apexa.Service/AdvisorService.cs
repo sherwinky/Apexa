@@ -28,12 +28,22 @@ namespace Apexa.Service
             _validator = validator;
             _utilService = util;
         }
+        /// <summary>
+        /// Get advisor by id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public ApexaResult GetAdvisor(long id)
         {
             var advisor = _advisorDal.Get(id);
             MaskAdvisor(advisor);
             return new ApexaResult(advisor);
         }
+        /// <summary>
+        /// search advisors
+        /// </summary>
+        /// <param name="parameter"></param>
+        /// <returns></returns>
         public ApexaResult GetAdvisorList(QueryParameter? parameter)
         {
             var advisorList = _advisorDal.GetAdvisors(parameter);
@@ -43,6 +53,12 @@ namespace Apexa.Service
             }
             return new ApexaResult(advisorList);
         }
+
+        /// <summary>
+        /// add new advisor
+        /// </summary>
+        /// <param name="advisor"></param>
+        /// <returns></returns>
         public ApexaResult AddAdvisor(Advisor advisor)
         {
             if (_validator.IsValidate(advisor, out IList<ValidationResult>  validationResults, true))
@@ -57,6 +73,12 @@ namespace Apexa.Service
             }
 
         }
+        /// <summary>
+        /// Update advisor
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="advisor"></param>
+        /// <returns></returns>
         public ApexaResult UpdateAdvisor(long id, Advisor advisor)
         {
             if (_validator.IsValidate(advisor, out IList<ValidationResult> validationResults, false))
@@ -69,6 +91,11 @@ namespace Apexa.Service
                 return new ApexaResult(false, null, validationResults);
             }
         }
+        /// <summary>
+        /// Delete advisor by id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public ApexaResult DeleteAdvisor(long id)
         {
 
@@ -83,7 +110,10 @@ namespace Apexa.Service
             }
 
         }
-
+        /// <summary>
+        /// Mask advisor fields
+        /// </summary>
+        /// <param name="advisor"></param>
         private void MaskAdvisor(Advisor? advisor)
         {
             if (advisor != null)

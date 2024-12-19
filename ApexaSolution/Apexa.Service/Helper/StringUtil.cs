@@ -8,6 +8,13 @@ namespace Apexa.Service.Helper
 {
     public static class StringUtil
     {
+        /// <summary>
+        /// Mask string
+        /// </summary>
+        /// <param name="str"></param>
+        /// <param name="mask"></param>
+        /// <param name="keep"></param>
+        /// <returns></returns>
         public static string Mask(this string str,string mask,int keep)
         {
             string retVal = str;

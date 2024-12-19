@@ -18,6 +18,7 @@ namespace Apexa
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            //enable CORS for angular project
             builder.Services.AddCors(options =>
             {
                 options.AddDefaultPolicy(
@@ -38,7 +39,7 @@ namespace Apexa
 
             builder.Services.AddMvc(options =>
             {
-                options.Filters.Add(typeof(ErrorHandlingFilterAttribute));
+                options.Filters.Add(typeof(ErrorHandlingFilterAttribute));// global error handler
             });
             var app = builder.Build();
             // Configure the HTTP request pipeline.

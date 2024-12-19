@@ -3,6 +3,9 @@ using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace Apexa.Filters
 {
+    /// <summary>
+    /// Global error handler, handel the error in the site level
+    /// </summary>
     public class ErrorHandlingFilterAttribute : ExceptionFilterAttribute
     {
         private readonly ILogger<ErrorHandlingFilterAttribute> _logger;
